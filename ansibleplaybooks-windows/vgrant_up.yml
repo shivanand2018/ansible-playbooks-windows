@@ -1,0 +1,21 @@
+---
+ - name: starting up of vagrant box
+   hosts: winsystems
+   gather_facts: false
+   tasks:
+#    - name: Installing Vagrant on windows machine
+#      win_package:
+#       path: http://192.168.1.99/packages/vagrant_2.2.19.msi
+#       product_id: vagrant_2.2.19
+#       state: present
+
+    - name: copying batch script from control node to windows node
+      win_copy:
+       src: /home/ansadmin/playbooks/winplaybooks/vbox.bat
+       dest: c:\users\admin\
+
+    - name: Running windows batch file to create vm
+      win_command: vbox.bat
+      args:
+       chdir: C:\users\admin
+

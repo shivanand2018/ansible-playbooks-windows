@@ -1,0 +1,14 @@
+---
+ - name: Changing user password
+   hosts: winsystems
+   tasks:
+    - name: changing password of admin user
+      win_user:
+        name: admin
+        password: ansadmin@#321
+        state: present
+        groups: 
+         - administrators
+        force: yes
+        user_name: admin
+        user_password: cseadmin

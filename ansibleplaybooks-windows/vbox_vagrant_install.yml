@@ -1,0 +1,16 @@
+---
+ - name: Installing Virtual Box and Vagrant on Windows system
+   hosts: winsystems
+   gather_facts: false
+   tasks:
+   - name: Installing VirtualBox using win_chocolatey
+     win_chocolatey:
+      name: virtualbox
+      state: latest
+   - name: Installing Vagrant
+     win_package:
+      path: e:\ansible-examples\vagrant_2.2.19.msi
+      product_id: vagrant
+      state: present
+     
+

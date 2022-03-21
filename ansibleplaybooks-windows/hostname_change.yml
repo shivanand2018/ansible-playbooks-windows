@@ -1,0 +1,10 @@
+---
+ - name: Change host name of the managed nodes
+   hosts: winsystems
+   tasks:
+    - name: changing the hostname
+      win_hostname:
+        name: "{{ new_hostname }}"
+        
+   
+ 

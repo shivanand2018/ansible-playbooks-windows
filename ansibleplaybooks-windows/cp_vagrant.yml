@@ -1,0 +1,9 @@
+---
+ - name: copying files
+   hosts: winsystems
+   gather_facts: no
+   tasks:
+    - name: copying vagrant files
+      win_copy:
+        src: /home/ansadmin/playbooks/winplaybooks/vagrant_2.2.19.msi
+        dest: e:\ansible-examples\

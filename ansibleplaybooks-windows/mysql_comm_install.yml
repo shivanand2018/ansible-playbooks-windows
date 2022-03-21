@@ -1,0 +1,22 @@
+---
+ - name: Installing Mysql Community edition on windows 10
+   hosts: winsystems
+   gather_facts: false
+   tasks:
+   - name: Installing Mysql_community_edition
+     win_package:
+   #path: e:\mysql-server\mysql-installer-community-8.0.28.0.msi    
+      path: http://192.168.1.99/packages/mysql-installer-community-8.0.28.0.msi
+      product_id: mysql-community-edition
+      state: present
+      arguments: /install /passive /norestart
+      force: yes
+#   - name: installing Mysql server
+#     win_package:
+#      name: "{{ pakcages }}"
+#      state: present
+#     vars:
+#      packages:
+#        - mysql-community-server
+#        - mysql-community-client
+       

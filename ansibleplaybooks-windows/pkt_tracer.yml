@@ -1,0 +1,17 @@
+---
+ - name: Installing software on windows machines
+   hosts: win
+   tasks:
+   - name: Installing Packettracer
+     win_package:
+       path: e:\ansible-examples\PacketTracer-7.3.0-win64-setup.exe
+       product_id: PacketTracer 
+       arguments: /S /VERYSILENT 
+       state: present
+       force: yes 
+       user_name: admin
+       user_password: cseadmin
+       
+   #  become: yes
+   #  become_user: administrator
+   #  become_method: runas

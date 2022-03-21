@@ -1,0 +1,16 @@
+---
+ - name: installing vagrant on windows machine
+   hosts: winsystems
+   gather_facts: no
+   tasks:
+    - name: Installing vagrant
+      win_package: 
+#        path: /home/ansadmin/playbooks/winplaybooks/vagrant_2.2.19.msi
+#        path: http://192.168.1.99/vagrant_2.2.19.msi
+        path: e:\ansible-examples\vagrant_2.2.19.msi
+ #       product_id: vagrant
+        state: present
+#        arguments: /S /VERYSILENT
+        force: yes	
+        user_name: cseadmin
+        user_password: cseadmin 

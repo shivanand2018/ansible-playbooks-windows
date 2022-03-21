@@ -1,0 +1,12 @@
+---
+ - name: Copying files from windows host
+   hosts: winsystems
+   tasks:
+    - name: copying files
+  #    win_copy:
+      fetch:
+       src: e:\ansible-examples\javainstallation.txt 
+#       src: ./test.sh 
+       dest: /home/ansadmin/playbooks/winplaybooks/
+       flat: yes 
+       when:  "{{ ansible_hostname == DESKTOP-MVHB00V }}" 

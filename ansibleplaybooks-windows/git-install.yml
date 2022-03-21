@@ -1,0 +1,8 @@
+---
+ - name: Installing git on windows systems
+   hosts: win
+   tasks: 
+    - name: Installing git
+      win_chocolatey:
+        name: git
+        state: present

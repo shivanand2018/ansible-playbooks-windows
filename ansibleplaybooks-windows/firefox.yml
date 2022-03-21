@@ -1,0 +1,8 @@
+---
+ - name: Installing packages using win_chocolatey
+   hosts: win
+   tasks:
+    - name: Installing Firefox
+      win_chocolatey:
+        name: Firefox
+        state: present

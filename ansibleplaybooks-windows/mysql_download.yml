@@ -1,0 +1,8 @@
+---
+ - hosts: winsystems
+   gather_facts: false
+   tasks:
+   - name: downloading mysql_communiity_edition from local server
+     win_get_url:
+      url: http://192.168.1.99/packages/mysql-installer-community-8.0.28.0.msi
+      dest: e:\mysql-server

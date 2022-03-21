@@ -1,0 +1,13 @@
+---
+ - name: Playbook to manage windows users
+   hosts: winsystems
+   tasks:
+    - name: creating new user on windows systems
+      win_user:
+       name: csestaff
+       password: csestaff@123
+       description: staff only
+       password_never_expires: yes
+       user_cannot_change_password: yes
+       state: present
+       groups: users

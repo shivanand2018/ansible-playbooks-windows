@@ -1,0 +1,16 @@
+---
+ - name: Setting up Vagrant box
+   hosts: winsystems
+   gather_facts: false
+   tasks:
+   - name: copying Vangrant file to windows node
+     win_copy: 
+      src: /home/admin/Vagrantfile
+      dest: C:\users\admin\vagrant\ubuntu
+   - name: changing the directory
+     win_command: 
+      chdir: c:\users\admin\vagrant\ubuntu
+      remote_src: yes
+   - name: running vagrant command 
+     win_command: vagrant up
+ 

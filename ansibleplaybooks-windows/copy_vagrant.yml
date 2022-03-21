@@ -1,0 +1,11 @@
+---
+ - name: copying files from node
+   hosts: winsystems
+   gather_facts: no
+   tasks:
+   - name: copying vagrant
+     fetch: 
+      src: e:/ansible-examples/vagrant_2.2.19.msi
+      dest: /home/ansadmin/playbooks/winplaybooks/
+      flat: yes
+    

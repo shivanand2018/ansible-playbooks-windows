@@ -1,0 +1,9 @@
+---
+ - name: Installing Virtualbox on windows machines
+   hosts: winsystems
+   tasks:
+    - name: installing virtualbox
+      win_chocolatey:
+       name: virtualbox
+       state: absent
+     

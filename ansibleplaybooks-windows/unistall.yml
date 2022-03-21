@@ -1,0 +1,23 @@
+---
+ - name: Uninstalling the software
+   hosts: winsystems
+   tasks:
+   #- name: Uninstalling PacketTracer
+   #  win_package:
+   #   path: c:\Program Files\Cisco Packet Tracer 7.3.0\unins000.exe
+    # #path: e:\ansible-examples\PacketTracer-7.3.0-win64-setup.exe
+     # product_id: 'Cisco Packet Tracer 7.3.0 64Bit_is1'
+      #product_id: PacketTracer
+     # arguments: /S /VERYSILENT
+     # state: absent
+     #become: yes
+     #become_method: runas
+     #become_user: SYSTEM
+    - name: Uninstalling  software
+       win_package:
+         path: "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Stellar Data Recovery Professional\Uninstall Stellar Data Recovery Professional.exe" 
+         product_id: 'Stellar Data Recovery'
+         arguments: /S /VERYSILENT
+         state: absent
+         #force: yes
+   

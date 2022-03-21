@@ -1,0 +1,11 @@
+---
+ - name: Installing codeblock on windows system
+   hosts: win
+   tasks:
+    - name: Installing codeblock
+      win_package: 
+        #path: http://192.168.1.99/codeblock/codeblocks-20.03mingw-setup.exe
+        path: 
+        product_id: codeblock
+        state: present
+        arguments: /S /VERYSILENT

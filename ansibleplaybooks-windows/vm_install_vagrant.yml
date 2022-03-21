@@ -1,0 +1,37 @@
+---
+ - name: Installing virtual Machine using virtual box and vagrant
+   hosts: winsystems
+   gather_facts: false
+   tasks:
+   - name: Installing Virtual Box on windows machines
+     win_package:
+      path: http://192.168.1.99/packages/VirtualBox-6.1.30-148432-Win.exe
+      product_id: Virtual_box
+      state: present
+   - name: Installing Vagrant on windows machine
+     win_package: 
+      path: http://192.168.1.99/packages/vagrant_2.2.19.msi
+      product_id: vagrant_2.2.19
+      state: present
+   
+   - name: copying batch script from control node to windows node
+     win_copy:
+      src: /home/ansadmin/playbooks/winplaybooks/vbox.bat
+      dest: c:\users\admin\
+
+   - name: Running windows batch file to create vm
+     win_command: vbox.bat
+     args:
+      chdir: C:\users\admin
+#   - name: copying vagrant file to node
+#     win_copy: 
+#      src: /home/ansadmin/Vagrantfile
+#      dest: c:\users\admin\vagrant\ubuntu\
+#   - name: moving to the vagrant directory
+#      win_command: cd c:\users\admin\vagrant\ubuntu
+#    - name: running vagrant up 
+#     win_shell: vagrant up
+#      args:
+#       executable: cmd.exe
+#      script: ./scrtipt.bat
+  
